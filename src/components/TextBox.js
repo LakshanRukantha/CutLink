@@ -9,7 +9,7 @@ export default function FullWidthTextField() {
     <Box className="text-box-container">
       <TextField
         fullWidth
-        label="Enter Long URL"
+        label="URL"
         id="fullWidth"
         size="small"
         helperText="Paste long url and shorten it"
@@ -19,8 +19,9 @@ export default function FullWidthTextField() {
           },
         }}
       />
-      <Box className="btn-box" mb={3} ml={3}>
+      <Box className="btn-box">
         <Button
+          className="btn"
           variant="contained"
           style={{
             borderRadius: 50,
