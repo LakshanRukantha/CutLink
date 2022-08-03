@@ -3,7 +3,7 @@
   <h1 align="center">CutLink (Link Shortner)</h1>
   <h5 align="center">React + MUI + JSX</h5>
   <hr/>
-<!--<img src="" alt="webpage preview"/> -->
+<img src="https://res.cloudinary.com/ddnv9dswe/image/upload/v1659559530/Screenshot_51_rphzqb.png" alt="webpage preview"/>
   <hr/>
   
 <p align="center">
