@@ -1,0 +1,43 @@
+:root {
+  --mainColor: #2196f3;
+  --hoverColor: #5bacdf;
+  --backgroundColor: #f1f8fc;
+  --darkOne: #312f3a;
+  --darkTwo: #45424b;
+  --lightOne: #919191;
+  --lightTwo: #ffffff;
+}
+
+.lightMode,
+.lightMode .MuiList-root {
+  background-color: var(--backgroundColor);
+}
+
+.lightMode .MuiAppBar-root,
+.lightMode footer {
+  background-color: var(--mainColor) !important;
+}
+.lightMode h1 {
+  color: var(--darkOne);
+}
+.darkMode,
+.darkMode .MuiList-root,
+.darkMode .MuiAppBar-root,
+.darkMode footer {
+  background-color: var(--darkOne);
+}
+.darkMode h1,
+.darkMode h2,
+.darkMode .MuiList-root,
+.darkMode footer {
+  color: var(--lightTwo);
+}
+.darkMode .MuiOutlinedInput-input {
+  outline: solid 2px var(--lightTwo);
+  color: var(--lightTwo);
+  border-radius: 50px;
+}
+.darkMode .MuiFormHelperText-root,
+.darkMode .MuiOutlinedInput-input::placeholder {
+  color: var(--lightTwo);
+}

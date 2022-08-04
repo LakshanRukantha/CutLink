@@ -9,14 +9,13 @@ const Footer = () => {
         left: "0",
         bottom: "0",
         right: "0",
-        backgroundColor: "#2196f3",
         width: "100%",
       }}
     >
       <Typography
         variant="body2"
         color="#fff"
-        component="h6"
+        component="footer"
         align="center"
         sx={{ width: "100%" }}
       >

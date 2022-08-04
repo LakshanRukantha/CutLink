@@ -1,4 +1,6 @@
 import * as React from "react";
+import "./Theme.css";
+import { useState, useEffect } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -12,11 +14,36 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-// import LinkIcon from "@mui/icons-material/Link";
 
 const pages = ["Home", "Pricing", "About"];
 
 const ResponsiveAppBar = () => {
+  function useLocalStorageState(key, initialValue) {
+    const [value, setValue] = useState(() => {
+      const persistedValue = localStorage.getItem(key);
+      return persistedValue !== null ? persistedValue : initialValue;
+    });
+
+    useEffect(() => {
+      localStorage.setItem(key, value);
+    }, [key, value]);
+
+    return [value, setValue];
+  }
+  const [mode, setMode] = useLocalStorageState("lightMode");
+
+  useEffect(() => {
+    document.body.className = mode;
+  }, [mode]);
+
+  function toggleMode() {
+    setClick(!click);
+    if (click === true) {
+      setMode("lightMode");
+    } else {
+      setMode("darkMode");
+    }
+  }
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -29,9 +56,6 @@ const ResponsiveAppBar = () => {
 
   const [click, setClick] = React.useState(false);
 
-  const handleClick = () => {
-    setClick(!click);
-  };
   return (
     <AppBar position="sticky">
       <Container maxWidth="xl">
@@ -66,29 +90,31 @@ const ResponsiveAppBar = () => {
               </Tooltip>
             </IconButton>
 
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+            <Box>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorElNav}
+                anchorOrigin={{
+                  vertical: "bottom",
+                  horizontal: "left",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "left",
+                }}
+                open={Boolean(anchorElNav)}
+                sx={{
+                  display: { xs: "block" },
+                }}
+              >
+                {pages.map((page) => (
+                  <MenuItem key={page} onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">{page}</Typography>
+                  </MenuItem>
+                ))}
+              </Menu>
+            </Box>
           </Box>
           <Typography
             variant="h5"
@@ -120,7 +146,7 @@ const ResponsiveAppBar = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <IconButton onClick={handleClick} color="inherit">
+            <IconButton onClick={toggleMode} color="inherit">
               {click ? (
                 <Tooltip title="Light Mode">
                   <LightModeIcon fontSize="large" />

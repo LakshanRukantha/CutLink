@@ -1,11 +1,11 @@
 :root {
-  --mainColor: #64bcf4;
+  --mainColor: #2196f3;
   --hoverColor: #5bacdf;
   --backgroundColor: #f1f8fc;
   --darkOne: #312f3a;
   --darkTwo: #45424b;
   --lightOne: #919191;
-  --lightTwo: #aaa;
+  --lightTwo: #e1e9ee;
 }
 .main-container {
   position: absolute;
@@ -14,8 +14,9 @@
   align-items: center;
   flex-direction: column;
   background-image: url(../images/wave.svg);
+  background-blend-mode: color;
   background-repeat: no-repeat;
-  background-size: 300%;
+  background-size: 350%;
   height: calc(100vh - 64px);
 }
 .showcase-area {
@@ -37,7 +38,6 @@
 }
 .showcase-area .left h1 {
   font-size: 30px;
-  color: var(--darkOne);
   font-weight: 900;
   margin-bottom: 20px;
   margin-top: 50px;
@@ -45,7 +45,6 @@
 .showcase-area .left h2 {
   font-size: 17px;
   font-weight: 400;
-  color: var(--darkOne);
   margin-bottom: 20px;
 }
 .showcase-area .right {
@@ -105,14 +104,12 @@
   }
   .showcase-area .left h1 {
     font-size: 35px;
-    color: var(--darkOne);
     font-weight: 900;
     margin-bottom: 30px;
   }
   .showcase-area .left h2 {
     font-size: 18px;
     font-weight: 400;
-    color: var(--darkOne);
     margin-bottom: 40px;
   }
   .showcase-area .right {
@@ -171,14 +168,12 @@
   }
   .showcase-area .left h1 {
     font-size: 50px;
-    color: var(--darkOne);
     font-weight: 900;
     margin-bottom: 30px;
   }
   .showcase-area .left h2 {
     font-size: 20px;
     font-weight: 400;
-    color: var(--darkOne);
     margin-bottom: 40px;
   }
   .showcase-area .right {

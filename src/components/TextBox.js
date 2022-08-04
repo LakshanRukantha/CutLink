@@ -8,11 +8,12 @@ export default function FullWidthTextField() {
   return (
     <Box className="text-box-container">
       <TextField
+        className="url-area"
         fullWidth
-        label="URL"
         id="fullWidth"
+        placeholder="Paste long url and shorten it"
         size="small"
-        helperText="Paste long url and shorten it"
+        helperText="Ex: http://example.com/"
         sx={{
           [`& fieldset`]: {
             borderRadius: 50,
