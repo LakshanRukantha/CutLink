@@ -20,11 +20,13 @@
 .lightMode h1 {
   color: var(--darkOne);
 }
-.darkMode,
 .darkMode .MuiList-root,
 .darkMode .MuiAppBar-root,
 .darkMode footer {
   background-color: var(--darkOne);
+}
+.darkMode{
+  background-color: var(--darkTwo);
 }
 .darkMode h1,
 .darkMode h2,
@@ -33,9 +35,11 @@
   color: var(--lightTwo);
 }
 .darkMode .MuiOutlinedInput-input {
-  outline: solid 2px var(--lightTwo);
   color: var(--lightTwo);
   border-radius: 50px;
+}
+.darkMode .MuiOutlinedInput-input {
+  outline: solid 1px var(--lightOne);
 }
 .darkMode .MuiFormHelperText-root,
 .darkMode .MuiOutlinedInput-input::placeholder {
