@@ -57,7 +57,7 @@ const ResponsiveAppBar = () => {
   const [click, setClick] = React.useState(false);
 
   return (
-    <AppBar position="sticky">
+    <AppBar position="fixed">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography

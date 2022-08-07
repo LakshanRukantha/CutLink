@@ -13,9 +13,20 @@
   max-width: 1200px;
   width: 100%;
 }
+.swal2-popup {
+  position: relative;
+  top: 55px;
+}
+
 .btn-box .btn {
   width: 100%;
   margin-top: 10px;
+}
+@media only screen and (min-width: 600px) {
+  .swal2-popup {
+    position: relative;
+    top: 64px;
+  }
 }
 @media only screen and (min-width: 768px) {
   .text-box-container {
@@ -29,6 +40,7 @@
     grid-template-columns: 3fr 1fr;
     margin-bottom: 40px;
   }
+
   .btn-box {
     margin-top: -25px;
   }

@@ -16,15 +16,19 @@ export default function FullWidthTextField() {
       .get(getUrl)
       .then(function (response) {
         // handle success
+        // Swal.fire({
+        //   icon: "success",
+        //   title: "URL Shorten Successfully!",
+        // });
         setUrl(response.data.result.full_short_link);
       })
       .catch(function (error) {
         // handle error
-        Swal.fire(
-          "Oops!",
-          "You entered an invalid url. Please check the url and try again!",
-          "error"
-        );
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Invalid URL! Please check the URL and try again.",
+        });
       });
     setUrl("");
   };

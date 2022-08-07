@@ -17,7 +17,7 @@
   background-blend-mode: color;
   background-repeat: no-repeat;
   background-size: 350%;
-  height: calc(100vh - 64px);
+  height: calc(100vh);
 }
 .showcase-area {
   display: grid;
@@ -82,7 +82,7 @@
     background-image: url(../images/wave.svg);
     background-repeat: no-repeat;
     background-size: 115%;
-    height: calc(100vh - 64px);
+    height: calc(100vh);
   }
   .showcase-area {
     display: grid;
@@ -145,8 +145,8 @@
     flex-direction: column;
     background-image: url(../images/wave.svg);
     background-repeat: no-repeat;
-    background-size: 115%;
-    height: calc(100vh - 64px);
+    background-size: 125%;
+    height: calc(100vh);
   }
   .showcase-area {
     display: grid;
