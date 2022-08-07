@@ -1,10 +1,10 @@
 <p align="center">
 
-  <h1 align="center">CutLink (Link Shortner)</h1>
-  <h5 align="center">React + MUI + JSX</h5>
-  <hr/>
+<h1 align="center">CutLink (Link Shortner)</h1>
+<h5 align="center">React + MUI + JSX</h5>
+<hr/>
 <img src="https://res.cloudinary.com/ddnv9dswe/image/upload/v1659560639/Screenshot_52_mrhhgl.png" alt="webpage preview"/>
-  <hr/>
+<hr/>
   
 <p align="center">
 
