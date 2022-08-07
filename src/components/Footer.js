@@ -14,12 +14,11 @@ const Footer = () => {
     >
       <Typography
         variant="body2"
-        color="#fff"
         component="footer"
         align="center"
         sx={{ width: "100%" }}
       >
-        Made with &#10084; by Lakshan Rukantha
+        Made with <span>&#10084;</span> by Lakshan Rukantha
       </Typography>
     </Box>
   );

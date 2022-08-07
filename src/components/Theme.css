@@ -2,7 +2,7 @@
   --mainColor: #2196f3;
   --hoverColor: #5bacdf;
   --backgroundColor: #f1f8fc;
-  --darkOne: #312f3a;
+  --darkOne: #252525;
   --darkTwo: #45424b;
   --lightOne: #919191;
   --lightTwo: #ffffff;
@@ -17,6 +17,12 @@
 .lightMode footer {
   background-color: var(--mainColor) !important;
 }
+.lightMode footer {
+  color: var(--lightTwo);
+}
+footer span {
+  color: red;
+}
 .lightMode h1 {
   color: var(--darkOne);
 }
@@ -25,7 +31,7 @@
 .darkMode footer {
   background-color: var(--darkOne);
 }
-.darkMode{
+.darkMode {
   background-color: var(--darkTwo);
 }
 .darkMode h1,

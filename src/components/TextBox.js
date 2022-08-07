@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import axios from "axios";
+import Swal from "sweetalert2";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import "./TextBox.css";
@@ -19,7 +20,11 @@ export default function FullWidthTextField() {
       })
       .catch(function (error) {
         // handle error
-        console.log(error);
+        Swal.fire(
+          "Oops!",
+          "You entered an invalid url. Please check the url and try again!",
+          "error"
+        );
       });
     setUrl("");
   };
