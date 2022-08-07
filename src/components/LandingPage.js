@@ -1,5 +1,5 @@
 import React from "react";
-import FullWidthTextField from "./TextBox";
+import TextBox from "./TextBox";
 import "./LandingPage.css";
 import Footer from "./Footer";
 
@@ -21,7 +21,7 @@ const LandingPage = () => {
         </div>
       </div>
       <div className="link-area">
-        <FullWidthTextField />
+        <TextBox />
       </div>
       <Footer />
     </div>
