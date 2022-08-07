@@ -16,7 +16,7 @@ const Footer = () => {
         variant="body2"
         component="footer"
         align="center"
-        sx={{ width: "100%" }}
+        sx={{ width: "100%", backgroundColor:'#2196f3' }}
       >
         Made with <span>&#10084;</span> by Lakshan Rukantha
       </Typography>
