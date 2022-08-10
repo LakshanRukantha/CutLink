@@ -10,7 +10,7 @@
 
 _Social buttons_
 
-[![lakshanrukantha - link_shortner](https://img.shields.io/static/v1?label=lakshanrukantha&message=link_shortner&color=blue&logo=github)](https://github.com/lakshanrukantha/link_shortner "Go to GitHub repo")
+[![lakshanrukantha - CutLink](https://img.shields.io/static/v1?label=lakshanrukantha&message=CutLink&color=blue&logo=github)](https://github.com/lakshanrukantha/link_shortner "Go to GitHub repo")
 [![stars - lakshanrukantha.github.io](https://img.shields.io/github/stars/lakshanrukantha/link_shortner?style=social)](https://github.com/lakshanrukantha/link_shortner)
 [![forks - lakshanrukantha.github.io](https://img.shields.io/github/forks/lakshanrukantha/link_shortner?style=social)](https://github.com/lakshanrukantha/link_shortner)
 
