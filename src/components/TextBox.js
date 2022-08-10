@@ -5,12 +5,21 @@ import Swal from "sweetalert2";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import "./TextBox.css";
+//import ReCAPTCHA from "react-google-recaptcha";
 
-export default function FullWidthTextField() {
+const FullWidthTextField = () => {
   const [url, setUrl] = useState("");
   const [btnText, setBtnText] = useState("Shorten");
-  const baseUrl = "https://api.shrtco.de/v2/shorten?url=";
-  const getUrl = `${baseUrl}${url}`;
+
+  const baseUrl = "https://api.shrtco.de/v2/shorten?";
+  const getUrl = `${baseUrl}url=${url}`;
+
+  //const [verified, setVerified] = useState(false);
+
+  // function onChange(value) {
+  //   //setVerified(true);
+  // }
+
   const handleSubmit = (event) => {
     event.preventDefault();
     setUrl("Loading...");
@@ -25,6 +34,7 @@ export default function FullWidthTextField() {
           // handle success
           setUrl(response.data.result.full_short_link);
           setBtnText("Copy To Clipboard");
+          // setVerified(false);
         })
         .catch(function (error) {
           // handle error
@@ -34,6 +44,7 @@ export default function FullWidthTextField() {
             text: "Invalid URL! Please check the URL and try again.",
           });
           setUrl("");
+          // setVerified(false);
         });
   };
   const handleChange = (e) => {
@@ -65,6 +76,7 @@ export default function FullWidthTextField() {
           className="btn"
           onClick={handleSubmit}
           variant="contained"
+          // disabled={!verified}
           style={{
             borderRadius: 50,
             paddingTop: 8,
@@ -76,6 +88,14 @@ export default function FullWidthTextField() {
           {btnText}
         </Button>
       </Box>
+      {/* <Box className="recaptcha-box">
+      <ReCAPTCHA
+          sitekey="6Lc5GGYhAAAAAKWur2E8b4lWO7NXbzRsSHSPltHD"
+          onChange={onChange}
+        />
+      </Box> */}
     </Box>
   );
-}
+};
+
+export default FullWidthTextField;

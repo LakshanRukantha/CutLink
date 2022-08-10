@@ -13,6 +13,11 @@
   max-width: 1200px;
   width: 100%;
 }
+.recaptcha-box {
+  margin-top: 20px;
+  margin-bottom: 0px;
+  width: 100%;
+}
 .swal2-popup {
   position: relative;
   top: 55px;
@@ -42,7 +47,11 @@
     grid-template-columns: 3fr 1fr;
     margin-bottom: 40px;
   }
-
+  .recaptcha-box {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 100%;
+  }
   .btn-box {
     margin-top: -25px;
   }
