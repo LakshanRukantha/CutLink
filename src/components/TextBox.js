@@ -8,18 +8,29 @@ import "./TextBox.css";
 
 export default function FullWidthTextField() {
   const [url, setUrl] = useState("");
+  const [copyText, setCopyText] = useState("");
   const baseUrl = "https://api.shrtco.de/v2/shorten?url=";
   const getUrl = `${baseUrl}${url}`;
   const handleSubmit = (event) => {
     event.preventDefault();
+    setUrl("Loading...");
     axios
       .get(getUrl)
-      .then(function (response) {
+      .then((response) => {
         // handle success
-        // Swal.fire({
-        //   icon: "success",
-        //   title: "URL Shorten Successfully!",
-        // });
+
+        Swal.fire({
+          title: "Done!",
+          text: "URL Shorten Successfully!",
+          icon: "success",
+          showCancelButton: false,
+          confirmButtonColor: "#3085d6",
+          confirmButtonText: "Copy To Clipboard",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            alert("copied!");
+          }
+        });
         setUrl(response.data.result.full_short_link);
       })
       .catch(function (error) {
@@ -30,7 +41,6 @@ export default function FullWidthTextField() {
           text: "Invalid URL! Please check the URL and try again.",
         });
       });
-    setUrl("");
   };
 
   return (

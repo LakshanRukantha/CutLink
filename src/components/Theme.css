@@ -60,6 +60,8 @@ footer span {
   color: var(--darkOne);
 }
 .darkMode .MuiList-root,
+.darkMode .swal2-success-circular-line-right,
+.darkMode .swal2-success-circular-line-left,
 .darkMode .MuiAppBar-root,
 .darkMode footer,
 .darkMode .swal2-popup {
@@ -77,8 +79,9 @@ footer span {
   -webkit-text-fill-color: var(--lightTwo);
   border-radius: 50px;
   caret-color: var(--lightTwo);
-  -webkit-box-shadow: 0 0 0px 1px transparent inset;
+  -webkit-box-shadow: 0 0 0 30px var(--darkTwo) inset !important;
 }
+
 .darkMode,
 .darkMode .link-area {
   background-color: var(--darkTwo);
@@ -93,9 +96,7 @@ footer span {
   color: var(--lightTwo);
   border-radius: 50px;
 }
-/* .darkMode .MuiOutlinedInput-input {
-  outline: solid 1px var(--lightOne);
-} */
+
 .darkMode .MuiFormHelperText-root,
 .darkMode .MuiOutlinedInput-input::placeholder {
   color: var(--lightTwo);
