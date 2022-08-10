@@ -16,6 +16,7 @@ export default function FullWidthTextField() {
     setUrl("Loading...");
     if (btnText === "Copy To Clipboard") {
       navigator.clipboard.writeText(url);
+      setBtnText("Copied!");
       setUrl(url);
     } else
       axios
