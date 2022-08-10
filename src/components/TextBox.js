@@ -8,39 +8,38 @@ import "./TextBox.css";
 
 export default function FullWidthTextField() {
   const [url, setUrl] = useState("");
-  const [copyText, setCopyText] = useState("");
+  const [btnText, setBtnText] = useState("Shorten");
   const baseUrl = "https://api.shrtco.de/v2/shorten?url=";
   const getUrl = `${baseUrl}${url}`;
   const handleSubmit = (event) => {
     event.preventDefault();
     setUrl("Loading...");
-    axios
-      .get(getUrl)
-      .then((response) => {
-        // handle success
-
-        Swal.fire({
-          title: "Done!",
-          text: "URL Shorten Successfully!",
-          icon: "success",
-          showCancelButton: false,
-          confirmButtonColor: "#3085d6",
-          confirmButtonText: "Copy To Clipboard",
-        }).then((result) => {
-          if (result.isConfirmed) {
-            alert("copied!");
-          }
+    if (btnText === "Copy To Clipboard") {
+      navigator.clipboard.writeText(url);
+      setUrl(url);
+    } else
+      axios
+        .get(getUrl)
+        .then((response) => {
+          // handle success
+          setUrl(response.data.result.full_short_link);
+          setBtnText("Copy To Clipboard");
+        })
+        .catch(function (error) {
+          // handle error
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Invalid URL! Please check the URL and try again.",
+          });
+          setUrl("");
         });
-        setUrl(response.data.result.full_short_link);
-      })
-      .catch(function (error) {
-        // handle error
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Invalid URL! Please check the URL and try again.",
-        });
-      });
+  };
+  const handleChange = (e) => {
+    setUrl(e.target.value);
+    if (e.target.value !== url) {
+      setBtnText("Shorten");
+    }
   };
 
   return (
@@ -50,7 +49,7 @@ export default function FullWidthTextField() {
         fullWidth
         id="fullWidth"
         value={url}
-        onChange={(event) => setUrl(event.target.value)}
+        onChange={handleChange}
         placeholder="Paste long url and shorten it"
         size="small"
         helperText="Ex: http://example.com/"
@@ -73,7 +72,7 @@ export default function FullWidthTextField() {
             paddingRight: 30,
           }}
         >
-          Shorten
+          {btnText}
         </Button>
       </Box>
     </Box>
